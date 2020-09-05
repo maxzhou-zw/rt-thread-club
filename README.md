@@ -46,3 +46,43 @@
 
 ![Snipaste_2020-08-31_11-46-43](figures/Snipaste_2020-08-31_11-46-43.png)
 
+### 邮件
+
+### 开通邮件服务
+
+- 没有 163 邮箱的请注册 163 邮箱账号，我们将使用 网易 163 邮件的[免费发送服务](http://help.163.com/09/1223/14/5R7P3QI100753VB8.html)。 
+
+- 打开 163 邮箱，点击设置，开启 IMAP 服务，新增授权密码，保存好授权密码。
+
+  ![163](figures/163.png)
+
+- 打开仓库，添加邮箱 secrets:
+
+  ![email](figures/email.png) 
+
+- 邮件服务就开通完毕了，每天 CI 运行完毕，会发送邮件到你的邮箱，会显示签到天数，以及附件今日排行榜。
+
+  ![paihang](figures/paihang.png)
+
+### 关闭邮件服务
+
+打开 actions.yml 文件，删除下面代码：
+
+```c
+    - name: Send email
+      uses: dawidd6/action-send-mail@master
+      with:
+        server_address: smtp.163.com
+        server_port: 465
+        username: ${{ secrets.MAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: 签到小助手提醒您 (${{env.REPORT_DATE}})
+        body: ${{env.CLUB_DAY_NUMERS}}
+        to: ${{ secrets.TEST_EMAIL }}
+        from: GitHub Actions
+        content_type: text/html
+        attachments: /home/runner/paihang.png
+```
+
+
+
