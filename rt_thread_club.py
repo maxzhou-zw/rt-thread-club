@@ -11,7 +11,7 @@ def login_in_club(user_name, pass_word):
     option.add_argument('headless')
     option.add_argument('no-sandbox')
     option.add_argument('disable-dev-shm-usage')
-    driver = webdriver.Chrome(chrome_options=option)
+    driver = webdriver.Chrome(chrome_options=option, executable_path=r'/usr/bin/chromedriver')
     driver.maximize_window()
     # login in
     driver.get("https://www.rt-thread.org/account/user/index.html?response_type=code&authorized=yes&scope=basic&state=1588816557615&client_id=30792375&redirect_uri=https://club.rt-thread.org/index/user/login.html")
