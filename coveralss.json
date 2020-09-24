@@ -1,0 +1,10 @@
+{
+  "name": "thread-liu study",
+  "version": "1.0.0",
+  "description": "study",
+  "main": "index.js",
+  "scripts": {
+    "coverage": "jest --maxWorkers=2 --coverage",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+  }
+}
