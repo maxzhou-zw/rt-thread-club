@@ -58,7 +58,3 @@ jobs:
         from: GitHub Actions
         content_type: text/html
         attachments: /home/runner/paihang.png
-    - name: Coveralls
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
