@@ -1,3 +1,4 @@
+[![Coverage Status](https://coveralls.io/repos/github/thread-liu/rt-thread-club/badge.svg?branch=master)](https://coveralls.io/github/thread-liu/rt-thread-club?branch=master)  
 # 使用教程
 
 ## 简介
