@@ -100,3 +100,8 @@
 - 添加环境变量和定时任务：
 
   ![travis_ci_env](figures/travis_ci_env.jpg)
+  
+
+## Star 趋势
+
+[![Stargazers over time](https://starchart.cc/thread-liu/rt-thread-club.svg)](https://starchart.cc/thread-liu/rt-thread-club.svg)
