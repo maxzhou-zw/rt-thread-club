@@ -58,3 +58,9 @@ jobs:
         from: GitHub Actions
         content_type: text/html
         attachments: /home/runner/paihang.png
+    - name: 'Upload Artifact'
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: /home/runner/paihang.png
+        retention-days: 5
