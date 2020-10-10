@@ -1,5 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/thread-liu/rt-thread-club/badge.svg?branch=master)](https://coveralls.io/github/thread-liu/rt-thread-club?branch=master)    
-![rt-thread-club](https://github.com/thread-liu/rt-thread-club/workflows/Greet%20Everyone/badge.svg)
+![rt-thread-club](https://github.com/thread-liu/rt-thread-club/workflows/rt-thread-club/badge.svg)
 
 # 使用教程
 
