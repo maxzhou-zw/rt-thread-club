@@ -7,17 +7,11 @@ on:
   schedule:
     - cron:  '0 */4 * * *'
   push:
-    branches: [ master ]
-    paths-ignore:
-      - docs/**
-      - cmake/**
-      - scripts/**
+    branches:
+      - master
   pull_request:
-    branches: [ master ]
-    paths-ignore:
-      - docs/**
-      - cmake/**
-      - scripts/**
+    branches:
+      - master
 
 jobs:
   # This workflow contains a single job called "build"
