@@ -7,17 +7,11 @@ on:
   schedule:
     - cron:  '0 */4 * * *'
   push:
-    branches: [ master ]
-    paths-ignore:
-      - docs/**
-      - cmake/**
-      - scripts/**
+    branches:
+      - master
   pull_request:
-    branches: [ master ]
-    paths-ignore:
-      - docs/**
-      - cmake/**
-      - scripts/**
+    branches:
+      - master
 
 jobs:
   # This workflow contains a single job called "build"
@@ -37,27 +31,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install selenium
     - name: Sign In
+      run: |
+        python actions.py
       env:
         CLUB_USERNAME: ${{ secrets.USERNAME }}
         CLUB_PASSWORD: ${{ secrets.PASSWORD }}
-      run: |
-        python actions.py
-        echo "::set-env name=CLUB_DAY_NUMERS::$(cat sign_in_days.txt)"
-    - name: 'Get Date'
-      run: echo "::set-env name=REPORT_DATE::$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')"
-#     - name: Send email
-#       uses: dawidd6/action-send-mail@master
-#       with:
-#         server_address: smtp.163.com
-#         server_port: 465
-#         username: ${{ secrets.MAIL_USERNAME }}
-#         password: ${{ secrets.EMAIL_PASSWORD }}
-#         subject: 签到小助手提醒您 (${{env.REPORT_DATE}})
-#         body: ${{env.CLUB_DAY_NUMERS}}
-#         to: ${{ secrets.TEST_EMAIL }}
-#         from: GitHub Actions
-#         content_type: text/html
-#         attachments: /home/runner/paihang.png
+
 #     - name: 'Upload Artifact'
 #       uses: actions/upload-artifact@v2
 #       with:
